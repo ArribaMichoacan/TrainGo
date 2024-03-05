@@ -1,8 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrainGo.App">
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrainGo.App">
+
+    <!--  Aqui se pueden definir estilos globales, estaticos para reusarlos  -->
     <Application.Resources>
+
+        <!--  Colores  -->
+        <Color x:Key="MittalBlue">#0070C0</Color>
+        <Color x:Key="MittalGray">#414141</Color>
+
+        <!--  Styles  -->
+
+        <Style TargetType="Button" x:Key="ButtonBlue">
+            <Setter Property="BackgroundColor" Value="#0070C0" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="GilroyRegular" />
+            <Setter Property="BorderColor" Value="Silver" />
+            <Setter Property="BorderWidth" Value="0.4" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="labelCard">
+            <Setter Property="TextColor" Value="{StaticResource MittalGray}" />
+            <Setter Property="FontFamily" Value="GilroyBold" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+        </Style>
+
+
+
 
     </Application.Resources>
 </Application>

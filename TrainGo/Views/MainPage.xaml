@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customView="clr-namespace:TrainGo.UserControls"
+    xmlns:vm="clr-namespace:TrainGo.ViewModels"
+    x:DataType="vm:MainViewModel"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="TrainGo.Views.MainPage">
+    <StackLayout Spacing="0">
+        <customView:CustomToolBarView />
+
+        <Label
+            Padding="30,0,30,0"
+            FontFamily="GilroyBold"
+            FontSize="Title"
+            HorizontalOptions="Center"
+            Text="TrainGo"
+            FontAttributes="Bold"
+            TextColor="#414141" />
+
+
+        <Button
+            BackgroundColor="#0070C0"
+            BorderColor="Silver"
+            Margin="70,10,70,10"
+            BorderWidth="0.4"
+            CornerRadius="10"
+            FontFamily="GilroyBold"
+            Text="Comenzar Carga"
+            TextColor="White"
+            Command="{Binding ComenzarCargaCommand}"
+            />
+
+        <Frame HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+            <Image Source="islaLogo"/>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

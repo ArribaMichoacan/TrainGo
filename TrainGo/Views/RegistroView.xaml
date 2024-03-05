@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrainGo.Views.RegistroView"
+    xmlns:customView="clr-namespace:TrainGo.UserControls"
+    xmlns:vm="clr-namespace:TrainGo.ViewModels"
+    x:DataType="vm:RegistroViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <customView:CustomToolBarView />
+
+            <Grid
+                Padding="2"
+                BackgroundColor="#0070C0"
+                ColumnDefinitions="0*,0.2*,*"
+                ColumnSpacing="0"
+                HeightRequest="40"
+                RowSpacing="0">
+
+                <ImageButton
+                    x:Name="ImgBtnRegreso"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    Source="regreso"
+                    Visual="Material"
+                    Command="{Binding RegresarPageCommand}"
+                    WidthRequest="10" />
+
+                <Label
+                    Grid.Column="2"
+                    Padding="8"
+                    FontFamily="GilroyRegular"
+                    FontSize="Subtitle"
+                    HorizontalOptions="StartAndExpand"
+                    Text="  Regresar"
+                    TextColor="#FFFFFF" />
+
+            </Grid>
+
+            <!--  Grid Info Tren - Gondolas  -->
+            <Grid ColumnDefinitions="3*,*" RowDefinitions="50,50,55">
+
+                <Button
+                    Style="{StaticResource ButtonBlue}"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="0,5,5,0"
+                    Text="Guardar" />
+                <Entry
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="GilroyRegular"
+                    Keyboard="Numeric"
+                    Placeholder="Ingresa un numero de tren"
+                    PlaceholderColor="{StaticResource MittalGray}" />
+
+                <Picker
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontFamily="GilroyRegular"
+                    HorizontalTextAlignment="Center"
+                    Title="Selecciona un tren"
+                    TextColor="{StaticResource MittalGray}"
+                    TitleColor="{StaticResource MittalGray}" />
+
+                <Button
+                    Style="{StaticResource ButtonBlue}"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Eliminar"
+                    Margin="0,0,5,0" />
+
+                <Button
+                    Style="{StaticResource ButtonBlue}"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    VerticalOptions="Center"
+                    Margin="70,10,70,10"
+                    Text="Escanear Gondola" />
+
+
+                <Picker
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Title="ID Gondola"
+                    FontFamily="GilroyRegular"
+                    Margin="40,0,40,0"
+                    HorizontalTextAlignment="Center"
+                    TextColor="{StaticResource MittalGray}"
+                    TitleColor="{StaticResource MittalGray}" />
+
+                <Button
+                    Style="{StaticResource ButtonBlue}"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="Actualizar"
+                    Margin="-15,0,5,0" />
+            </Grid>
+
+            <BoxView
+                Color="{StaticResource MittalBlue}"
+                HeightRequest="2"
+                Margin="5" />
+
+            <Frame BackgroundColor="{StaticResource MittalGray}" BorderColor="Gray">
+
+                <Grid ColumnDefinitions="*,*">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="GilroyBold"
+                        HorizontalTextAlignment="End"
+                        Text="Peso Total:"
+                        TextColor="White" />
+
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="GilroyBold"
+                        HorizontalTextAlignment="Start"
+                        TextColor="White" />
+
+                </Grid>
+            </Frame>
+
+
+            <Grid ColumnDefinitions="*,*">
+
+                <RelativeLayout Grid.Column="0">
+
+
+                    <Image
+                        x:Name="imagenGondola"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Height,
+                                                                               Factor=1}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                              Property=Width,
+                                                                              Factor=1}"
+                        Source="GondolaPeque"
+                        VerticalOptions="FillAndExpand" />
+
+                    <!--#region IMAGENES-->
+
+                    <!--  Rollo 1  -->
+                    <Image
+                        x:Name="imgRollo1"
+                        IsVisible="true"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                               ElementName=imagenGondola,
+                                                                               Property=Height,
+                                                                               Factor=0.15}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Width,
+                                                                          Factor=0.267}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Height,
+                                                                          Factor=0.02}"
+                        Source="RolloImagen" />
+
+                    <!--  ROllO 2  -->
+
+                    <Image
+                        x:Name="imgRollo2"
+                        IsVisible="true"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                               ElementName=imagenGondola,
+                                                                               Property=Height,
+                                                                               Factor=0.15}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Width,
+                                                                          Factor=0.27}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Height,
+                                                                          Factor=0.22}"
+                        Source="RolloImagen" />
+
+
+                    <!--  ROllO 3  -->
+
+                    <Image
+                        x:Name="imgRollo3"
+                        IsVisible="true"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                               ElementName=imagenGondola,
+                                                                               Property=Height,
+                                                                               Factor=0.15}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Width,
+                                                                          Factor=0.27}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Height,
+                                                                          Factor=0.41}"
+                        Source="RolloImagen" />
+
+
+                    <!--  ROllO 4  -->
+
+                    <Image
+                        x:Name="imgRollo4"
+                        IsVisible="true"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                               ElementName=imagenGondola,
+                                                                               Property=Height,
+                                                                               Factor=0.15}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Width,
+                                                                          Factor=0.27}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Height,
+                                                                          Factor=0.61}"
+                        Source="RolloImagen" />
+
+                    <!--  ROllO 5  -->
+
+                    <Image
+                        x:Name="imgRollo5"
+                        IsVisible="true"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                               ElementName=imagenGondola,
+                                                                               Property=Height,
+                                                                               Factor=0.15}"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Width,
+                                                                          Factor=0.27}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imagenGondola,
+                                                                          Property=Height,
+                                                                          Factor=0.81}"
+                        Source="RolloImagen" />
+                    <!--#endregion-->
+                </RelativeLayout>
+
+                <StackLayout
+                    Margin="0,0,0,2"
+                    Spacing="25"
+                    Grid.Column="1">
+
+                    <customView:CardCoilView
+                        Margin="0,5,8,0"
+                        x:Name="card1"
+                        CardPosicion="Posicion 1" />
+
+                    <customView:CardCoilView
+                        Margin="0,5,8,0"
+                        x:Name="card2"
+                        CardPosicion="Posicion 2" />
+
+                    <customView:CardCoilView
+                        Margin="0,5,8,0"
+                        x:Name="card3"
+                        CardPosicion="Posicion 3" />
+
+                    <customView:CardCoilView
+                        Margin="0,5,8,0"
+                        x:Name="card4"
+                        CardPosicion="Posicion 4" />
+
+                    <customView:CardCoilView
+                        Margin="0,5,8,0"
+                        x:Name="card5"
+                        CardPosicion="Posicion 5" />
+
+                </StackLayout>
+
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
