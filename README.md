@@ -14,5 +14,5 @@ Los rollos de acero van transportados sobre la gondola, una gondola puede llevar
 Esta aplicacion permitio a los operadores encargados del registro de carga de rollos a las gondolas facilitar su trabajo, ademas que permitio que todo dejara de ser manual.
 
 Revisar la wiki para la informacion tecnica
-1. Imagenes de las vistas de la aplicación (Interfaces)
+1. <a href="https://github.com/ArribaMichoacan/TrainGo/wiki/Vistas-de-la-aplicaci%C3%B3n">Imagenes de las vistas de la aplicación (Interfaces)</a>
 2. Código
