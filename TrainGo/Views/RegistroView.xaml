@@ -147,7 +147,7 @@
                     <!--  Rollo 1  -->
                     <Image
                         x:Name="imgRollo1"
-                        IsVisible="true"
+                        IsVisible="{Binding IsPos1Visible}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
                                                                                ElementName=imagenGondola,
                                                                                Property=Height,
@@ -166,7 +166,7 @@
 
                     <Image
                         x:Name="imgRollo2"
-                        IsVisible="true"
+                        IsVisible="{Binding IsPos2Visible}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
                                                                                ElementName=imagenGondola,
                                                                                Property=Height,
@@ -186,7 +186,7 @@
 
                     <Image
                         x:Name="imgRollo3"
-                        IsVisible="true"
+                        IsVisible="{Binding IsPos3Visible}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
                                                                                ElementName=imagenGondola,
                                                                                Property=Height,
@@ -206,7 +206,7 @@
 
                     <Image
                         x:Name="imgRollo4"
-                        IsVisible="true"
+                        IsVisible="{Binding IsPos4Visible}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
                                                                                ElementName=imagenGondola,
                                                                                Property=Height,
@@ -225,7 +225,7 @@
 
                     <Image
                         x:Name="imgRollo5"
-                        IsVisible="true"
+                        IsVisible="{Binding IsPos5Visible}"
                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
                                                                                ElementName=imagenGondola,
                                                                                Property=Height,
@@ -250,27 +250,47 @@
                     <customView:CardCoilView
                         Margin="0,5,8,0"
                         x:Name="card1"
-                        CardPosicion="Posicion 1" />
+                        CardPosicion="Posicion 1"
+                        TextButton="Escanear rollo 1"
+                        Command="{Binding EscanearRolloCommand}"
+                        IdButton="1"
+                        ButtonColor="{Binding Button1BackGroundColor}" />
 
                     <customView:CardCoilView
                         Margin="0,5,8,0"
                         x:Name="card2"
-                        CardPosicion="Posicion 2" />
+                        CardPosicion="Posicion 2"
+                        TextButton="Escanear rollo 2"
+                        Command="{Binding EscanearRolloCommand}"
+                        ButtonColor="{Binding Button2BackGroundColor}"
+                        IdButton="2" />
 
                     <customView:CardCoilView
                         Margin="0,5,8,0"
                         x:Name="card3"
-                        CardPosicion="Posicion 3" />
+                        CardPosicion="Posicion 3"
+                        TextButton="Escanear rollo 3"
+                        Command="{Binding EscanearRolloCommand}"
+                        ButtonColor="{Binding Button3BackGroundColor}"
+                        IdButton="3" />
 
                     <customView:CardCoilView
                         Margin="0,5,8,0"
                         x:Name="card4"
-                        CardPosicion="Posicion 4" />
+                        CardPosicion="Posicion 4"
+                        TextButton="Escanear rollo 4"
+                        Command="{Binding EscanearRolloCommand}"
+                        ButtonColor="{Binding Button4BackGroundColor}"
+                        IdButton="4" />
 
                     <customView:CardCoilView
                         Margin="0,5,8,0"
                         x:Name="card5"
-                        CardPosicion="Posicion 5" />
+                        CardPosicion="Posicion 5"
+                        TextButton="Escanear rollo 5"
+                        Command="{Binding EscanearRolloCommand}"
+                        ButtonColor="{Binding Button5BackGroundColor}"
+                        IdButton="5" />
 
                 </StackLayout>
 

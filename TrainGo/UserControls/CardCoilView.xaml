@@ -5,7 +5,10 @@
     x:Class="TrainGo.UserControls.CardCoilView"
     x:Name="this">
 
-    <Frame Padding="0" BorderColor="Black" BindingContext="{x:Reference this}">
+    <Frame
+        Padding="0"
+        BorderColor="Black"
+        BindingContext="{x:Reference this}">
         <StackLayout Spacing="0">
             <!--  Posicion  -->
             <Label
@@ -58,7 +61,7 @@
                     Grid.Column="1"
                     Style="{StaticResource labelCard}"
                     Text="Peso:" />
-                <Label                    
+                <Label
                     x:Name="lblPeso2"
                     Grid.Row="2"
                     Grid.Column="1"
@@ -70,14 +73,17 @@
 
             <!--  Boton escanear rollo  -->
             <Button
+                x:Name="ButtonEscanear"
                 Padding="2"
-                BackgroundColor="#FF3700"
+                BackgroundColor="{Binding ButtonColor}"
                 Margin="1,1,1,-2"
                 FontSize="12"
                 HeightRequest="33"
-                HorizontalOptions="Fill"                
-                Clicked="Escanear"
-                Text="Escanear Rollo 2"
+                AutomationId="{Binding IdButton}"
+                HorizontalOptions="Fill"
+                Command="{Binding Command}"
+                CommandParameter="{Binding ., Source={x:Reference ButtonEscanear}}"
+                Text="{Binding TextButton}"
                 TextColor="#FFFFFF" />
             <BoxView HeightRequest="2" Color="White" />
             <!--  Boton de tomar imagen  -->
@@ -86,7 +92,7 @@
             <Button
                 Margin="1,1,1,1"
                 Padding="2"
-                BackgroundColor="#D8D8D8"                
+                BackgroundColor="#D8D8D8"
                 FontFamily="GilroyBold"
                 HeightRequest="33"
                 ImageSource="CamaraIconoM"
